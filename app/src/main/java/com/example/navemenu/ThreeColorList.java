@@ -1,5 +1,7 @@
 package com.example.navemenu;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,8 +18,16 @@ LinearLayout lv;
         return true;
     }
     public boolean onOptionsItemSelected (MenuItem menu){
-
-
+        int id= menu.getItemId();
+        if(id==R.id.red){
+            lv.setBackgroundColor(Color.RED);
+        }
+        if(id==R.id.blue){
+            lv.setBackgroundColor(Color.BLUE);
+        }
+        if(id==R.id.green){
+            lv.setBackgroundColor(Color.GREEN);
+        }
         return  true;
     }
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +37,7 @@ LinearLayout lv;
     }
 
     public void nextact(View view) {
-        
+    Intent si=new Intent(this,FourColorList.class);
+    startActivity(si);
     }
 }
